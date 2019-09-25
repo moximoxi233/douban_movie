@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="dv"></div>
+<script src="jsonptest.js"></script>
+<script>
+	(function () {
+		$jsonp('https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b',
+				{
+					start:1,
+					count:1
+				},
+				function (data) {
+			console.log(data);
+					document.getElementById('dv').innerHTML=JSON.stringify(data)
+				}
+				)
+	})()
+</script>
+</body>
+</html>
